@@ -1,5 +1,7 @@
 # TimeCalculator
 
+![Example GIF](https://raw.githubusercontent.com/jramosg/time-number-calculator/master/src/assets/example.gif)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
 ## Development server
