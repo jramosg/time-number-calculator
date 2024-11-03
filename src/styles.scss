@@ -1,1 +1,62 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$time-calculator-primary: mat.define-palette(mat.$blue-grey-palette, 500, 300, 700);
+$time-calculator-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$time-calculator-warn: mat.define-palette(mat.$red-palette);
+
+$time-calculator-theme: mat.define-light-theme((
+  color: (
+    primary: $time-calculator-primary,
+    accent: $time-calculator-accent,
+    warn: $time-calculator-warn,
+  ),
+  density: 0
+));
+
+$dark-primary: mat.define-palette(mat.$blue-grey-palette, 800, 600, 900);
+$dark-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$dark-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object.
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent,
+    warn: $dark-warn,
+  ),
+  density: 0
+));
+
+$my-typography: mat.define-typography-config();
+@include mat.typography-hierarchy($my-typography);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($time-calculator-theme);
+
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --s: 8px;
+  --primary-color: #{mat.get-color-from-palette($time-calculator-primary)};
+  --time-calculator-palette-text-secondary: #555e68;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

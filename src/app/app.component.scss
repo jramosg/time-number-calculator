@@ -1,0 +1,42 @@
+.main {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.title {
+  margin: var(--s);
+}
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: fit-content;
+  grid-gap: var(--s);
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--s);
+}
+
+
+.divider-btn {
+  rotate: 90deg;
+}
+
+.results-delete-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s);
+  border-top: 1px solid var(--mat-divider-color);
+  border-bottom: 1px solid var(--mat-divider-color);
+
+  .last-operation{
+    color: var(--time-calculator-palette-text-secondary);
+  }
+  .actions-container {
+    button:first-child {
+      margin-right: var(--s);
+    }
+  }
+}
